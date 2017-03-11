@@ -126,6 +126,7 @@ public class MediaPlayer extends AppCompatActivity {
         mPlayer.start();
         current_pos = mPlayer.getCurrentPosition();
         seekBar.setProgress((int)current_pos);
+        myHandler.postDelayed(UpdateSongTime, 100);
 
         buttonPause.setEnabled(true);
         buttonPlay.setEnabled(false);
@@ -229,5 +230,45 @@ public class MediaPlayer extends AppCompatActivity {
             mPlayer = null;
         }
     }
+
+    private Runnable UpdateSongTime = new Runnable() {
+        public void run() {
+            startTime = mPlayer.getCurrentPosition();
+            seekBar.setProgress((int)startTime);
+            myHandler.postDelayed(this, 100);
+        }
+    };
+
+
+    //Stop the Handler when back button is pressed to avoid errors
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+       // Toast.makeText(getApplicationContext(),"Going Back",Toast.LENGTH_LONG).show();
+        if(mPlayer!=null) {
+            myHandler.removeCallbacks(UpdateSongTime);
+        }
+
+
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        if(mPlayer!=null && !mPlayer.isPlaying()){
+            buttonPlay.performClick();
+        }
+    }
+
+
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+
+    }
+
 
 }
