@@ -20,7 +20,9 @@ PlayMyBeat is a wonderful Media Player Application that helps you stream your fa
 <img src="images/SongList.png" width="250px" height="400px" />
 
 #### Media Player
-<img src="images/mediaplayer.png" width="250px" height="400px" />
+<img src="images/mp1.png" width="250px" height="400px" />
+<img src="images/mp2.png" width="250px" height="400px" />
+<img src="images/mediaplayer.png" width="400px" height="400px" />
 
 ## Technologies Used
 Android SDK Version 23
