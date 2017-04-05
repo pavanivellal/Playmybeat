@@ -77,4 +77,11 @@ public class MediaList extends Activity {
     }
 
 
+    public void button_Add_Songs(View v)
+    {
+        Intent intent1 = new Intent(MediaList.this, Add_Songs.class);
+        startActivity(intent1);
+    }
+
+
 }

@@ -21,6 +21,7 @@
         <activity android:name=".Signin_n" />
         <activity android:name=".MediaPlayer" />
         <activity android:name=".MediaList" />
+        <activity android:name=".Add_Songs"></activity>
     </application>
 
 </manifest>
